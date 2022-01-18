@@ -1,5 +1,6 @@
 import Navigation from "../Navigation";
 import Head from "next/head";
+import fetch from "isomorphic-fetch";
 export default function Container({ children, title }) {
   return (
     <div>
@@ -11,7 +12,7 @@ export default function Container({ children, title }) {
         />
       </Head>
       <Navigation />
-      <div>{children}</div>
+      <div className="container p-4">{children}</div>
     </div>
   );
 }

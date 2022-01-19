@@ -11,10 +11,10 @@ export default function index({ users }) {
   );
 }
 export async function getStaticProps() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  const users = await response.json();
-  console.log(users);
+  const response = await fetch("https://reqres.in/api/users");
+  const { data } = await response.json();
+  console.log(data);
   return {
-    props: { users },
+    props: { users: data },
   };
 }
